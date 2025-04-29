@@ -1,6 +1,3 @@
-# test_main.py
-# Юніт-тести з виводом метрик швидкості та пам'яті
-
 import unittest
 import time
 import tracemalloc

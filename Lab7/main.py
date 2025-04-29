@@ -1,6 +1,3 @@
-# main.py
-# Реалізація Task 1 (trie) та Task 2 (Aho–Korasick) з двома вхідними файлами.
-
 import os
 
 class Queue:
@@ -20,7 +17,6 @@ class Queue:
 
 class AhoCorasick:
     def __init__(self):
-        # children[node] = {символ: індекс вузла}
         self.children = []
         self.fail = []
         self.output = []
@@ -95,14 +91,11 @@ def task2_aho(text, patterns):
 
 def main():
     base = os.path.dirname(__file__)
-    # Шляхи до двох вхідних файлів
     trie_in = os.path.join(base, 'input_trie.dat')
     aho_in  = os.path.join(base, 'input_aho.dat')
-    # Шляхи до файлів-виходів
     trie_out = os.path.join(base, 'output_trie.dat')
     aho_out  = os.path.join(base, 'output_aho.dat')
 
-    # Task 1: Trie
     if os.path.exists(trie_in):
         with open(trie_in, 'r', encoding='utf-8') as fin:
             lines = [l.strip() for l in fin if l.strip()]
@@ -114,7 +107,6 @@ def main():
                 for e in edges:
                     fout.write(e + '\n')
 
-    # Task 2: Aho–Korasick
     if os.path.exists(aho_in):
         with open(aho_in, 'r', encoding='utf-8') as fin:
             lines = [l.strip() for l in fin if l.strip()]
